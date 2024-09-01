@@ -83,7 +83,7 @@ ExecStart=/usr/bin/python3 /var/ps5host/PS5-Exploit-Host-main/fakedns.py
 WantedBy=multi-user.target
 EOF
 
-nano /etc/systemd/system/host.service
+cat > /etc/systemd/system/host.service <<EOF
 [Unit]
 Description=host
 After=deploy.service
