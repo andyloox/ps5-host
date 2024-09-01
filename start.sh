@@ -77,7 +77,6 @@ cat > /etc/systemd/system/fakedns.service <<EOF
 Description=fakedns
 After=network-online.target
 Requires=network-online.target
-After=deploy.service
 After=multi-user.target
 
 [Service]
@@ -97,7 +96,6 @@ cat > /etc/systemd/system/host.service <<EOF
 Description=host
 After=network-online.target
 Requires=network-online.target
-After=deploy.service
 After=fakedns.service
 After=multi-user.target
 
