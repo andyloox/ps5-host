@@ -37,3 +37,5 @@ else
     echo -e "\e[32m${folder} repo clone is Ok!\e[39m"
   fi
 fi
+
+echo "A manuals.playstation.net 192.168.111.85" > ${folder}/dns.conf
