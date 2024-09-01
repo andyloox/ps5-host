@@ -3,8 +3,9 @@ clear
 apt install git
 rm -r /var/ps5host
 mkdir /var/ps5host
+mkdir /var/ps5host/PS5-Exploit-Host
 cd /var/ps5host
-folder="PS5-Exploit-Host"
+folder="/var/ps5host/PS5-Exploit-Host"
 c_beginning_url="https://github.com/idlesauce/PS5-Exploit-Host.git"
 
 repo_url=$c_beginning_url
