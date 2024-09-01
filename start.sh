@@ -63,8 +63,8 @@ User=root
 Group=root
 Type=simple
 Restart=always
-WorkingDirectory=/var/ps5host/PS5-Exploit-Host-main/
-ExecStart=/usr/bin/python /var/ps5host/PS5-Exploit-Host-main/deploy.py
+WorkingDirectory=/var/ps5host/PS5-Exploit-Host
+ExecStart=/usr/bin/python /var/ps5host/PS5-Exploit-Host/deploy.py
 
 [Install]
 WantedBy=multi-user.target
@@ -81,8 +81,8 @@ User=root
 Group=root
 Type=simple
 Restart=always
-WorkingDirectory=/var/ps5host/PS5-Exploit-Host-main/
-ExecStart=/usr/bin/python /var/ps5host/PS5-Exploit-Host-main/fakedns.py -с dns.conf
+WorkingDirectory=/var/ps5host/PS5-Exploit-Host
+ExecStart=/usr/bin/python /var/ps5host/PS5-Exploit-Host/fakedns.py -с dns.conf
 
 [Install]
 WantedBy=multi-user.target
@@ -100,8 +100,8 @@ User=root
 Group=root
 Type=simple
 Restart=always
-WorkingDirectory=/var/ps5host/PS5-Exploit-Host-main/
-ExecStart=/usr/bin/python /var/ps5host/PS5-Exploit-Host-main/host.py
+WorkingDirectory=/var/ps5host/PS5-Exploit-Host
+ExecStart=/usr/bin/python PS5-Exploit-Host/host.py
 
 [Install]
 WantedBy=multi-user.target
