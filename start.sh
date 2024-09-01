@@ -46,7 +46,12 @@ sysctl -w net.ipv6.conf.all.disable_ipv6=1
 sysctl -w net.ipv6.conf.default.disable_ipv6=1
 sysctl -w net.ipv6.conf.lo.disable_ipv6=1
 sysctl -p
-
+systemctl disable deploy.service
+systemctl disable fakedns.service
+systemctl disable host.service
+rm /etc/systemd/system/deploy.service
+rm /etc/systemd/system/fakedns.service
+rm /etc/systemd/system/host.service
 
 cat > /etc/systemd/system/deploy.service <<EOF
 [Unit]
@@ -110,4 +115,6 @@ systemctl enable host.service
 systemctl restart deploy.service
 systemctl restart fakedns.service
 systemctl restart host.service
+
+reboot
 
