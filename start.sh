@@ -84,7 +84,7 @@ After=multi-user.target
 User=root
 Group=root
 Type=simple
-Restart=always
+Restart=on-failure
 WorkingDirectory=/var/ps5host/PS5-Exploit-Host
 ExecStart=/usr/bin/python "/var/ps5host/PS5-Exploit-Host/fakedns.py -c dns.conf"
 
@@ -105,7 +105,7 @@ After=multi-user.target
 User=root
 Group=root
 Type=simple
-Restart=always
+Restart=on-failure
 WorkingDirectory=/var/ps5host/PS5-Exploit-Host
 ExecStart=/usr/bin/python PS5-Exploit-Host/host.py
 
