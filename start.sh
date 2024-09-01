@@ -103,4 +103,7 @@ WantedBy=multi-user.target
 EOF
 
 systemctl daemon-reload
-
+systemctl enable deploy.service
+systemctl enable fakedns.service
+systemctl enable host.service
+reboot
