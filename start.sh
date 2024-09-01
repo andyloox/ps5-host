@@ -38,4 +38,4 @@ else
   fi
 fi
 
-echo "A manuals.playstation.net 192.168.111.85" > "${folder}/dns.conf"
+echo "A manuals.playstation.net 192.168.111.85" > $folder/dns.conf
