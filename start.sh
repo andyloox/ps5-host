@@ -111,4 +111,4 @@ systemctl restart deploy.service
 systemctl restart fakedns.service
 systemctl restart host.service
 
-reboot
+#reboot
