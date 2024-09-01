@@ -8,12 +8,13 @@ folder="/var/ps5host/PS5-Exploit-Host"
 c_beginning_url="https://github.com/idlesauce/PS5-Exploit-Host.git"
 
 repo_url=$c_beginning_url
-git init
+
 if [ -d ${folder} ]
 then
   echo -e "\e[31m${folder} already exist!\e[39m"
   echo "try to update"
   cd ${folder}
+  git init
   git remote update
   count=$(git rev-list HEAD...origin/master --count)
   if [ $count -gt "0" ]
