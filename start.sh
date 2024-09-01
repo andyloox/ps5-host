@@ -39,3 +39,68 @@ else
 fi
 
 echo "A manuals.playstation.net 192.168.111.85" > $folder/dns.conf
+systemctl disable --now systemd-resolved.service
+alias python=python3
+update-alternatives --install /usr/bin/python python /usr/bin/python3 10
+sysctl -w net.ipv6.conf.all.disable_ipv6=1
+sysctl -w net.ipv6.conf.default.disable_ipv6=1
+sysctl -w net.ipv6.conf.lo.disable_ipv6=1
+sysctl -p
+
+
+cat > /etc/systemd/system/deploy.service <<EOF
+[Unit]
+Description=deploy
+After=multi-user.target
+
+[Service]
+User=root
+Group=root
+Type=simple
+Restart=always
+WorkingDirectory=/var/ps5host/PS5-Exploit-Host-main
+ExecStart=/usr/bin/python3 /var/ps5host/PS5-Exploit-Host-main/deploy.py
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+cat > /etc/systemd/system/fakedns.service <<EOF
+[Unit]
+Description=fakedns
+After=deploy.service
+After=multi-user.target
+
+[Service]
+User=root
+Group=root
+Type=simple
+Restart=always
+WorkingDirectory=/var/ps5host/PS5-Exploit-Host-main
+ExecStart=/usr/bin/python3 /var/ps5host/PS5-Exploit-Host-main/fakedns.py
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+nano /etc/systemd/system/host.service
+[Unit]
+Description=host
+After=deploy.service
+After=fakedns.service
+After=multi-user.target
+
+[Service]
+User=root
+Group=root
+Type=simple
+Restart=always
+WorkingDirectory=/var/ps5host/PS5-Exploit-Host-main
+ExecStart=/usr/bin/python3 /var/ps5host/PS5-Exploit-Host-main/host.py
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+systemctl daemon-reload
+
