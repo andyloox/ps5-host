@@ -1,6 +1,7 @@
 #!/bin/bash
 clear
 apt install git
+rm -r /var/ps5host
 mkdir /var/ps5host
 cd /var/ps5host
 folder="PS5-Exploit-Host"
