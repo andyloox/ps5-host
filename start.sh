@@ -106,4 +106,9 @@ systemctl daemon-reload
 systemctl enable deploy.service
 systemctl enable fakedns.service
 systemctl enable host.service
+
+systemctl restart deploy.service
+systemctl restart fakedns.service
+systemctl restart host.service
+
 reboot
