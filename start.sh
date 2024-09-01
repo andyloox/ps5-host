@@ -77,7 +77,7 @@ Group=root
 Type=simple
 Restart=always
 WorkingDirectory=/var/ps5host/PS5-Exploit-Host-main
-ExecStart=/usr/bin/python3 /var/ps5host/PS5-Exploit-Host-main/fakedns.py
+ExecStart=/usr/bin/python3 /var/ps5host/PS5-Exploit-Host-main/fakedns.py -с dns.conf
 
 [Install]
 WantedBy=multi-user.target
