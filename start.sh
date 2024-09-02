@@ -64,6 +64,7 @@ After=multi-user.target
 User=root
 Group=root
 Restart=always
+ExecStartPre=/usr/bin/sleep 3
 WorkingDirectory=/var/ps5host/PS5-Exploit-Host
 ExecStart=/usr/bin/python /var/ps5host/PS5-Exploit-Host/deploy.py
 
@@ -82,6 +83,7 @@ After=multi-user.target
 User=root
 Group=root
 Restart=always
+ExecStartPre=/usr/bin/sleep 5
 WorkingDirectory=/var/ps5host/PS5-Exploit-Host
 ExecStart=/usr/bin/python /var/ps5host/PS5-Exploit-Host/fakedns.py -c dns.conf
 
@@ -101,6 +103,7 @@ User=root
 Group=root
 Restart=always
 WorkingDirectory=/var/ps5host/PS5-Exploit-Host
+ExecStartPre=/usr/bin/sleep 5
 ExecStart=/usr/bin/python /var/ps5host/PS5-Exploit-Host/host.py
 
 [Install]
@@ -116,6 +119,6 @@ systemctl restart deploy.service
 systemctl restart fakedns.service
 systemctl restart host.service
 
-echo end4
+echo end6
 reboot
 
