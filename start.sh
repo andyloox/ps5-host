@@ -56,15 +56,12 @@ rm /etc/systemd/system/host.service
 cat > /etc/systemd/system/deploy.service <<EOF
 [Unit]
 Description=deploy
-After=network-online.target
-Requires=network-online.target
 After=multi-user.target
 
 [Service]
 User=root
 Group=root
 Restart=always
-ExecStartPre=/usr/bin/sleep 3
 WorkingDirectory=/var/ps5host/PS5-Exploit-Host
 ExecStart=/usr/bin/python /var/ps5host/PS5-Exploit-Host/deploy.py
 
@@ -83,7 +80,6 @@ After=multi-user.target
 User=root
 Group=root
 Restart=always
-ExecStartPre=/usr/bin/sleep 5
 WorkingDirectory=/var/ps5host/PS5-Exploit-Host
 ExecStart=/usr/bin/python /var/ps5host/PS5-Exploit-Host/fakedns.py -c dns.conf
 
@@ -94,8 +90,6 @@ EOF
 cat > /etc/systemd/system/host.service <<EOF
 [Unit]
 Description=host
-After=network-online.target
-Requires=network-online.target
 After=multi-user.target
 
 [Service]
@@ -103,7 +97,6 @@ User=root
 Group=root
 Restart=always
 WorkingDirectory=/var/ps5host/PS5-Exploit-Host
-ExecStartPre=/usr/bin/sleep 5
 ExecStart=/usr/bin/python /var/ps5host/PS5-Exploit-Host/host.py
 
 [Install]
@@ -119,6 +112,6 @@ systemctl restart deploy.service
 systemctl restart fakedns.service
 systemctl restart host.service
 
-echo end6
+echo end7
 reboot
 
