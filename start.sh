@@ -101,7 +101,7 @@ User=root
 Group=root
 Restart=always
 WorkingDirectory=/var/ps5host/PS5-Exploit-Host
-ExecStart=/usr/bin/python PS5-Exploit-Host/host.py
+ExecStart=/usr/bin/python /var/ps5host/PS5-Exploit-Host/host.py
 
 [Install]
 WantedBy=multi-user.target
@@ -116,6 +116,6 @@ systemctl restart deploy.service
 systemctl restart fakedns.service
 systemctl restart host.service
 
-echo end3
+echo end4
 reboot
 
