@@ -83,7 +83,7 @@ User=root
 Group=root
 Restart=always
 WorkingDirectory=/var/ps5host/PS5-Exploit-Host
-ExecStart=/usr/bin/python "/var/ps5host/PS5-Exploit-Host/fakedns.py -c dns.conf"
+ExecStart=/usr/bin/python /var/ps5host/PS5-Exploit-Host/fakedns.py -c dns.conf
 
 [Install]
 WantedBy=multi-user.target
@@ -116,6 +116,6 @@ systemctl restart deploy.service
 systemctl restart fakedns.service
 systemctl restart host.service
 
-echo end2
+echo end3
 reboot
 
