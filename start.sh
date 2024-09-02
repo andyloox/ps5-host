@@ -63,7 +63,6 @@ After=multi-user.target
 [Service]
 User=root
 Group=root
-Type=simple
 Restart=always
 WorkingDirectory=/var/ps5host/PS5-Exploit-Host
 ExecStart=/usr/bin/python /var/ps5host/PS5-Exploit-Host/deploy.py
@@ -82,8 +81,7 @@ After=multi-user.target
 [Service]
 User=root
 Group=root
-Type=simple
-Restart=on-failure
+Restart=always
 WorkingDirectory=/var/ps5host/PS5-Exploit-Host
 ExecStart=/usr/bin/python "/var/ps5host/PS5-Exploit-Host/fakedns.py -c dns.conf"
 
@@ -96,14 +94,12 @@ cat > /etc/systemd/system/host.service <<EOF
 Description=host
 After=network-online.target
 Requires=network-online.target
-After=fakedns.service
 After=multi-user.target
 
 [Service]
 User=root
 Group=root
-Type=simple
-Restart=on-failure
+Restart=always
 WorkingDirectory=/var/ps5host/PS5-Exploit-Host
 ExecStart=/usr/bin/python PS5-Exploit-Host/host.py
 
@@ -120,6 +116,6 @@ systemctl restart deploy.service
 systemctl restart fakedns.service
 systemctl restart host.service
 
-echo end1
+echo end2
 reboot
 
