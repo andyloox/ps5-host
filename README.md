@@ -19,4 +19,4 @@ chmod +x start.sh
 
 
 2. chmod +x 1.sh
-./1.sh
+3. ./1.sh
