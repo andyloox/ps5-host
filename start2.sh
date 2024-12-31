@@ -99,12 +99,12 @@ User=root
 Group=root
 Restart=always
 WorkingDirectory=/var/ps5host/PS5-UMTX-Jailbreak
-ExecStart=/usr/bin/python /var/ps5host/PS5-UMTX-Jailbreak/simple_server.py
+ExecStart=/usr/bin/python /var/ps5host/PS5-UMTX-Jailbreak/host.py
 
 [Install]
 WantedBy=multi-user.target
 EOF
-/usr/bin/python /var/ps5host/PS5-UMTX-Jailbreak/appcache_manifest_generator.py -d /var/ps5host/PS5-UMTX-Jailbreak
+/usr/bin/python /var/ps5host/PS5-UMTX-Jailbreak/appcache_manifest_generator.py -d /var/ps5host/PS5-UMTX-Jailbreak/document/en/ps5
 
 systemctl daemon-reload
 systemctl enable deploy.service
@@ -115,6 +115,6 @@ systemctl restart deploy.service
 systemctl restart fakedns.service
 systemctl restart host.service
 
-echo end9
+echo end10
 reboot
 
