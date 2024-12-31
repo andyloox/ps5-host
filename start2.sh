@@ -1,6 +1,7 @@
 #!/bin/bash
 clear
-apt install git
+apt-get update
+apt install git -y
 rm -r /var/ps5host
 mkdir /var/ps5host
 cd /var/ps5host
