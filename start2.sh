@@ -99,7 +99,7 @@ User=root
 Group=root
 Restart=always
 WorkingDirectory=/var/ps5host/PS5-UMTX-Jailbreak
-ExecStart=/usr/bin/python /var/ps5host/PS5-UMTX-Jailbreak/host.py
+ExecStart=/usr/bin/python /var/ps5host/PS5-UMTX-Jailbreak/simple_server.py
 
 [Install]
 WantedBy=multi-user.target
@@ -115,6 +115,6 @@ systemctl restart deploy.service
 systemctl restart fakedns.service
 systemctl restart host.service
 
-echo end8
+echo end9
 reboot
 
