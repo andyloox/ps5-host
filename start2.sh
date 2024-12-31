@@ -55,7 +55,7 @@ rm /etc/systemd/system/deploy.service
 rm /etc/systemd/system/fakedns.service
 rm /etc/systemd/system/host.service
 
-cat > /etc/systemd/system/deploy.service <<EOF
+echo > /etc/systemd/system/deploy.service <<EOF
 [Unit]
 Description=deploy
 After=multi-user.target
@@ -105,16 +105,16 @@ ExecStart=/usr/bin/python /var/ps5host/PS5-UMTX-Jailbreak/host.py
 WantedBy=multi-user.target
 EOF
 /usr/bin/python /var/ps5host/PS5-UMTX-Jailbreak/appcache_manifest_generator.py -d /var/ps5host/PS5-UMTX-Jailbreak/document/en/ps5
-
+pause 10
 systemctl daemon-reload
-systemctl enable deploy.service
+echo systemctl enable deploy.service
 systemctl enable fakedns.service
 systemctl enable host.service
 
-systemctl restart deploy.service
+echo systemctl restart deploy.service
 systemctl restart fakedns.service
 systemctl restart host.service
 
 echo end10
-reboot
+echo reboot
 
