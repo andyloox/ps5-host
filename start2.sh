@@ -64,7 +64,7 @@ After=multi-user.target
 User=root
 Group=root
 Restart=always
-WorkingDirectory=/var/ps5host/PS5-UMTX-Jailbreak
+WorkingDirectory=/var/ps5host/PS5-UMTX-Jailbreak/document/en/ps5
 ExecStart=/usr/bin/python /var/ps5host/PS5-UMTX-Jailbreak/appcache_manifest_generator.py
 
 [Install]
