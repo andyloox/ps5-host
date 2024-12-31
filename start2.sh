@@ -65,7 +65,7 @@ User=root
 Group=root
 Restart=always
 WorkingDirectory=/var/ps5host/PS5-UMTX-Jailbreak
-ExecStart=/usr/bin/python /var/ps5host/PS5-UMTX-Jailbreak/deploy.py
+ExecStart=/usr/bin/python /var/ps5host/PS5-UMTX-Jailbreak/appcache_manifest_generator.py
 
 [Install]
 WantedBy=multi-user.target
@@ -104,6 +104,7 @@ ExecStart=/usr/bin/python /var/ps5host/PS5-UMTX-Jailbreak/host.py
 [Install]
 WantedBy=multi-user.target
 EOF
+/usr/bin/python /var/ps5host/PS5-UMTX-Jailbreak/appcache_manifest_generator.py -d /var/ps5host/PS5-UMTX-Jailbreak
 
 systemctl daemon-reload
 systemctl enable deploy.service
