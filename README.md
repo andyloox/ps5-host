@@ -18,3 +18,11 @@ echo "A manuals.playstation.net 192.168.111.85" > /var/ps5host/PS5-Exploit-Host-
 3. ./1.sh
 
 upd 31/12/24 нужно обновить до https://github.com/idlesauce/PS5-UMTX-Jailbreak
+
+Как запустить:
+1. nano 2.sh
+
+И вставить код из файла 2.sh
+
+2. chmod +x 2.sh
+3. ./2.sh
