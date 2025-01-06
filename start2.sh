@@ -104,7 +104,7 @@ ExecStart=/usr/bin/python /var/ps5host/PS5-UMTX-Jailbreak/host.py
 [Install]
 WantedBy=multi-user.target
 EOF
-./root/genPem.sh
+/root/genPem.sh
 cp /root/localhost.pem /var/ps5host/PS5-UMTX-Jailbreak
 /usr/bin/python /var/ps5host/PS5-UMTX-Jailbreak/appcache_manifest_generator.py -d /var/ps5host/PS5-UMTX-Jailbreak/document/en/ps5
 pause 100
