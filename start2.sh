@@ -106,6 +106,8 @@ WantedBy=multi-user.target
 EOF
 /root/genPem.sh
 cp /root/localhost.pem /var/ps5host/PS5-UMTX-Jailbreak
+wget --no-check-certificate https://raw.githubusercontent.com/andyloox/ps5-host/master/custom_host_stuffNew.js
+cp custom_host_stuffNew.js /var/ps5host/PS5-UMTX-Jailbreak/document/en/ps5/custom_host_stuff.js
 wget --no-check-certificate https://raw.githubusercontent.com/andyloox/ps5-host/master/indexNew.html
 cp indexNew.html /var/ps5host/PS5-UMTX-Jailbreak/document/en/ps5/index.html
 
