@@ -1,5 +1,5 @@
 #!/bin/bash
-clear
+echo clear
 apt-get update
 apt install git -y
 rm -r /var/ps5host
