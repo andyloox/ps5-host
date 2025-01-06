@@ -121,6 +121,6 @@ echo systemctl restart deploy.service
 systemctl restart fakedns.service
 systemctl restart host.service
 
-echo end17
+echo end19
 echo reboot
 
