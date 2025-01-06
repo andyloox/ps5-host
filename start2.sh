@@ -104,8 +104,10 @@ ExecStart=/usr/bin/python /var/ps5host/PS5-UMTX-Jailbreak/host.py
 [Install]
 WantedBy=multi-user.target
 EOF
+./genPem.sh
+cp localhost.pem /var/ps5host/PS5-UMTX-Jailbreak -y
 /usr/bin/python /var/ps5host/PS5-UMTX-Jailbreak/appcache_manifest_generator.py -d /var/ps5host/PS5-UMTX-Jailbreak/document/en/ps5
-pause 10
+pause 100
 systemctl daemon-reload
 echo systemctl enable deploy.service
 systemctl enable fakedns.service
