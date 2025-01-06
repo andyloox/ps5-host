@@ -106,8 +106,10 @@ WantedBy=multi-user.target
 EOF
 /root/genPem.sh
 cp /root/localhost.pem /var/ps5host/PS5-UMTX-Jailbreak
+wget --no-check-certificate https://raw.githubusercontent.com/andyloox/ps5-host/master/indexNew.html
+cp indexNew.html /var/ps5host/PS5-UMTX-Jailbreak/document/en/ps5/index.html
+
 /usr/bin/python /var/ps5host/PS5-UMTX-Jailbreak/appcache_manifest_generator.py -d /var/ps5host/PS5-UMTX-Jailbreak/document/en/ps5
-pause 100
 systemctl daemon-reload
 echo systemctl enable deploy.service
 systemctl enable fakedns.service
